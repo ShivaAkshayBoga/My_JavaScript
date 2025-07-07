@@ -1,0 +1,18 @@
+<html>
+
+<body>
+    <button onclick="f1()">Click Me</button>
+
+    <script>
+        function f1() {
+            console.log('I am f1....')
+        }
+
+        (function () {
+            console.log('I am self invoked...')
+            // 10 lines of that we want to execute only once when page loads
+        })();
+    </script>
+</body>
+
+</html>

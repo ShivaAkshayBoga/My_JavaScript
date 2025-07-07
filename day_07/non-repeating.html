@@ -1,0 +1,20 @@
+<script>
+    let str='entertainment';
+    let arr= new Array(26).fill(0);
+    for(var i=0;i<str.length;i++){
+        arr[str.charCodeAt(i)-97]++;
+    }
+    for(var i=0;i<str.length;i++){
+        if(arr[str.charCodeAt(i)-97]==1){
+            console.log(str.at(i));
+            break;
+        }
+    }
+
+
+    let s=' Rain in india';
+    let sr=s.replaceAll('in','on');
+    console.log(sr);
+    console.log(s.split(' '));
+
+</script>

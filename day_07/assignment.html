@@ -1,0 +1,161 @@
+<script>
+    /*1. WAP to reverse a string
+	input:- 'sachin'
+	output:- 'nihcas'
+
+2. WAP to reverse words
+	input:- 'This is javascript class'
+	output:- 'class javascript is this'
+
+3. WAP to print the first non-repeated character in a string
+   input:- 'entertainment'
+   output:- r
+   
+4. WAP to print a string in title case
+	input:- 'this is javascript class'
+   output:- 'This Is Javascript Class'
+	
+5. WAP to find longest word in a sentence
+	input:- 'this is javascript class'
+    output:- javascript
+	
+6. WAP to print Account number
+   input:- '12345678987'
+   output:- '12*******87'
+   
+7. WAP to print Credit-card number
+   input:- '1111222233334444'
+   output:- '1111-2222-3333-4444'
+   
+8. WAP to check if 2 strings are anagram or not
+	'listen' - 'silent'    anagram(every char of str1 should be there in str2)
+	
+9. WAP to remove special character from a string
+   input:- 'hello@#hi&'
+   output:- 'hellohi'
+   
+10. WAP to move all the special characters to the end of the string
+	input:- 'hello@#hi&'
+   output:- 'hellohi@#&'*/
+
+//1. WAP to reverse a string
+
+let string1='sachinT';
+let arr=string1.split("");
+for(let i=0;i<arr.length/2;i++){
+    let entry=arr[i];
+    arr[i]=arr[arr.length-i-1];
+    arr[arr.length-i-1]=entry;
+}
+let answer1=arr.join("");
+console.log(answer1);
+
+//2. WAP to reverse words
+
+let input2= 'This is javascript class';
+let arr2=input2.split(" ");
+let arr2_1=new Array();
+for(let i=0;i<arr2.length;i++){
+    arr2_1[arr2.length-i-1]=arr2[i];
+}
+let arr2_2=arr2_1.join(" ");
+console.log(arr2_2);
+
+//3. WAP to print the first non-repeated character in a string
+let input3= 'entertainment';
+for(let i=0;i<input3.length;i++){
+    if(input3.indexOf(input3.charAt(i))==input3.lastIndexOf(input3.charAt(i))){
+        console.log(input3.charAt(i));
+        break;
+    }
+}
+
+//4. WAP to print a string in title case
+let input4= 'this is javascript class';
+let ans4='';
+for(let i=0;i<input4.length;i++){
+    if(i==0 || (i>0 && input4.charAt(i-1)==' ')){
+        ans4=ans4.concat(input4.charAt(i).toUpperCase());
+    }else{
+        ans4=ans4.concat(input4.charAt(i));
+    }
+}
+console.log(ans4);
+
+//5. WAP to find longest word in a sentence
+let input5='this is javascript class';
+let input5_1=input5.split(' ');
+let max=0;
+let ans="";
+for(let entry of input5_1){
+    if(entry.length>max){
+        ans=entry;
+        max=entry.length;
+    }
+}
+console.log(ans);
+
+//6. WAP to print Account number
+let input6= '12345678987';
+let input6_1=[];
+for(let i=0;i<input6.length;i++){
+    if(i>=2 && i<input6.length-2){
+        input6_1.push('*');
+    }else{
+        input6_1.push(input6.charAt(i));
+    }
+}
+console.log(input6_1.join(''));
+
+//7. WAP to print Credit-card number
+let input7= '1111222233334444'
+let ans7='';
+for(let i=0;i<input7.length;i++){
+    if(i>0 && i%4==0){
+        ans7=ans7.concat('-');
+    }
+    ans7=ans7.concat(input7.charAt(i));
+}
+console.log(ans7);
+
+//8. WAP to check if 2 strings are anagram or not
+let input8_1='listenu';
+let input8_2='sileunt';
+let input8_1_1=new Array(256).fill(0);
+let input8_2_1=new Array(256).fill(0);
+if(input8_1.length!=input8_2.length){
+    console.log(false);
+}else{
+    for(let i=0;i<input8_1.length;i++){
+        input8_1_1[input8_1.charCodeAt(i)]++;
+    }
+    for(let i=0;i<input8_2.length;i++){
+        input8_2_1[input8_2.charCodeAt(i)]++;
+    }
+    let boolean=true;
+    for(let i=0;i<26;i++){
+        if(input8_1_1[i]!=input8_2_1[i]){
+            boolean=false;
+        }
+    }
+    console.log(boolean);
+}
+
+//9. WAP to remove special character from a string
+let input9='hellZZo@#h#i&';
+let ans9=input9.replace(/[^a-zA-Z0-9]/g,'');
+console.log(ans9);
+
+//10. WAP to move all the special characters to the end of the string
+let input10='hello@#hi&';
+let input10_1=input10.replace(/[^a-zA-Z0-9]/g,'');
+let input10_2=input10.replace(/[a-zA-Z0-9]/g,'');
+let ans10=input10_1.concat(input10_2);
+console.log(ans10);
+
+
+let str4 = '1111222233334444'
+let result = str4.match(/.{1,4}/g).join('-')
+console.log(result);
+
+</script>

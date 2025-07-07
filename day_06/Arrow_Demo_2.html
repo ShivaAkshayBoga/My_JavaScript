@@ -1,0 +1,12 @@
+<script>
+    function f1() {          // Regular Function(this = How the function is called) 
+        console.log(this);   // this = window
+    }
+    f1();
+
+    
+    let f2 = () => {          // Arrow Function ( this = Where the function is written)
+        console.log(this);    // this = window
+    }
+    f2();
+</script>

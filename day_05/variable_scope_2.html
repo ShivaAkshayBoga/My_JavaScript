@@ -1,0 +1,31 @@
+<script>
+    function f1() {
+        if (true) {
+            var a = 10;
+            console.log(`Inside Block a: ${a}`);
+        }
+        console.log(`Inside function a: ${a}`);
+    }
+    f1();
+
+
+    if (true) {
+        var name = 'sanjay';
+        console.log(`Inside Block name: ${name}`);
+    }
+    console.log(`Global Fname: ${name}`);
+
+
+    function f2() {
+        if (true) {
+            if (true) {
+                var add = 'bangalore';
+                console.log(`inner Block add: ${add}`);
+            }
+            console.log(`outer Block add: ${add}`);
+        }
+        console.log(`function add: ${add}`);
+
+    }
+    f2();
+</script>

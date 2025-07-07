@@ -1,0 +1,31 @@
+<script>
+    var a = 10;
+    let b = 20;
+    const c = 30;
+    console.log(`Global: a:${a} b:${b} c:${c}`);
+
+    function f1() {
+        var d = 40
+        console.log('F1 starts...')
+        console.log(`f1: a:${a} b:${b} c:${c}`);
+        console.log(`f1: d:${d}`);
+        console.log(`f1: e:${e}`);
+        console.log('F1 ends...');
+    }
+    function f2() {
+         e = 50;
+        console.log('F2 starts...')
+        console.log(`f2: a:${a} b:${b} c:${c}`);
+        // console.log(`f1: d:${d}`); // No
+        console.log(`f2: e:${e}`);
+        console.log('F2 ends...');
+    }
+    f2();
+    f1();
+
+    console.log(`global code ends here `)
+
+
+    // When a variable is declared without var/let/cont , its scope is always global
+
+</script>

@@ -1,0 +1,28 @@
+<script>
+    var a = 10;
+    let b = 20;
+    const c = 30;
+    console.log(`a is:${a}`);
+    console.log(`b is:${b}`);
+    console.log(`c is:${c}`);
+
+    a = 15;
+    b = 25;
+    // c = 35;  // Uncaught TypeError: Assignment to constant variable.
+    console.log(`a is:${a}`);
+    console.log(`b is:${b}`);
+    console.log(`c is:${c}`);
+
+
+    const arr = [10, 20];
+    arr.push(30);   // yes
+    console.log(arr);
+    // arr = [100,200,300]; // assigning a new array to a const variable
+
+    const user = { name: 'sanjay', age: 40 };
+    console.log(user);
+    user.add = 'Bangalore'; // yes
+    delete user.age; // yes
+    console.log(user);
+    // user = { name: 'bharat', add: 'hyderabad' }; // no
+</script>

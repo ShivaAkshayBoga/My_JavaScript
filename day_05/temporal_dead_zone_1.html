@@ -1,0 +1,11 @@
+<script>
+    console.log(`a is:${a}`); // a = undefined
+    console.log(`b is:${b}`); //  Uncaught ReferenceError: Cannot access 'b' before initialization
+    console.log('Golbal code starts here...');
+    var a = 10;
+    console.log(`a is:${a}`);  // 10
+    let b = 20;
+    console.log(`b is:${b}`);  // 20
+    const c = 30;
+    console.log('Golbal code ends here...');
+</script>

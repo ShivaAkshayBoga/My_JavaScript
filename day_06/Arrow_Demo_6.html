@@ -1,0 +1,33 @@
+<script>
+    class User {
+        firstName = 'Virat';
+        lastName = 'Kohli';
+
+        fullName1() {   // this = user
+            console.log(this.firstName, this.lastName); // this = how/where we call it
+            console.log('FullName1 : ', this);
+        }
+        fullName2 = () => { // this = user (static)
+            console.log(this.firstName, this.lastName);
+            console.log('FullName2 : ', this)
+        }
+    }
+    let userObj = new User();
+    userObj.fullName1(); // Virat Kohli
+    userObj.fullName2(); // Virat Kohli
+
+    let a = userObj.fullName2; // fullName2 function is stored in 'a' variable
+    a();
+
+    let b = a;
+    b();
+
+    let c = b;
+    c();
+
+    let d = c;
+    d(); // userObj.fullName2
+
+    let x = userObj.fullName1;
+    x();  // userObj.fullName1;
+</script>
