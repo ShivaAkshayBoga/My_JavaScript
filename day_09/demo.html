@@ -1,0 +1,54 @@
+<script>    
+    employees = [
+      { eId: 101, name: "sanjay", hours: 3 },
+      { eId: 102, name: "deepak", hours: 2 },
+      { eId: 103, name: "ajay", hours: 4 }, // monday
+      { eId: 102, name: "deepak", hours: 3 },
+      { eId: 103, name: "ajay", hours: 3 }, // tuesday
+      { eId: 101, name: "sanjay", hours: 2 },
+      { eId: 102, name: "deepak", hours: 4 }, //wednesday
+    ];
+
+    let ans = employees.reduce((acc, val)=>{
+        let temp=acc.find((emp)=>emp.eId==val.eId);
+        if(temp){
+            temp.hours+=val.hours;
+        }else{
+            acc.push(val);
+        }
+        return acc;
+    },[]);
+
+console.log(JSON.stringify(ans));
+
+
+ const input = ["eat", "tea", "tan", "ate", "nat", "bat"];
+//console.log(groupAnagrams(input));
+    // Output: [ [ 'eat', 'tea', 'ate' ], [ 'tan', 'nat' ], [ 'bat' ] ]
+
+    let ans2= input.reduce((acc, val)=>{
+        let sorted=val.split('').sort().join('');
+        if(acc[sorted]){
+            acc[sorted].push(val);
+        }else{
+            acc[sorted]=[val];
+        }
+        return acc;
+    },{});
+    let result =[];
+    for(let entry in ans2){
+        result.push(ans2[entry]);
+    }
+     console.log(Object.values(ans2));
+
+    const arr5 = [1, 2, 3, 4, 5, 6, 7];
+    const k = 3;
+    //console.log(rotateArray(arr5, k)); // Output: [5, 6, 7, 1, 2, 3, 4]
+    let count=k%arr5.length;
+    let arr1=arr5.slice(0,arr5.length-k);
+    let arr2=arr5.slice(arr5.length-k);
+    let arr3= arr2.concat(arr1);
+    console.log(arr3);
+
+
+</script>

@@ -1,0 +1,16 @@
+<script>
+    let arr = [10, 20, [50, 40, [50, 60, [70, 80, [90, 100]]]]];
+
+    let flatArray = (arr)=>{
+        let result = arr.reduce((resultArr, ele) => {
+            if (Array.isArray(ele)) {
+                resultArr.push(...flatArray(ele));
+            } else {
+                resultArr.push(ele);
+            }
+            return resultArr;
+        },[]);
+    return result;
+}
+    console.log(flatArray(arr));  // incomplete code
+</script>
