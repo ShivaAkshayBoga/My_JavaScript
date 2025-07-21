@@ -15,16 +15,16 @@
         } */
 
         // Function expression
-        /* let changeColor = function changeColor() { // Regular ( this = how/where the function is called)
+         let changeColor = function changeColor() { // Regular ( this = how/where the function is called)
             console.log(this);   // this = dynamic (btn1 , btn2 , btn3 ...)
             this.style.backgroundColor = 'red';
-        } */
+        } 
 
         // Arrow Function
-        let changeColor = () => { // Arrow ( this = where the function is written)
+        /*let changeColor = () => { // Arrow ( this = where the function is written)
             console.log(this);   // this = static (window)
             this.style.backgroundColor = 'red'; // this = outer scope / lexical scope
-        }
+        }*/
 
         document.getElementById('btn-1').addEventListener('click', changeColor);
         document.getElementById('btn-2').addEventListener('click', changeColor);

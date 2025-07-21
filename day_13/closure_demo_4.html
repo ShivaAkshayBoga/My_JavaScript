@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="increment()">Increment</button>
+    <button onclick="sayHi()">sayHi</button>
+    <h2>Count:<span>0</span></h2>
+
+    <script>
+        function initializeCount() {
+            let count = 0; // 1
+            return function () {
+                count++;  // n
+                document.querySelector('span').innerHTML = count; // n
+            }
+        }
+        let increment = initializeCount();  // global variable
+        console.dir(increment);
+
+        function sayHi() {
+            count++;
+            document.querySelector('span').innerHTML = count;
+            console.log('Hiiiiiii')
+        }
+    </script>
+</body>
+
+</html>

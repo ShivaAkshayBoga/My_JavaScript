@@ -1,0 +1,30 @@
+<script>
+    function add(a, b) { // function
+        console.log(a + b);
+    }
+    add(10, 20);
+
+    // ES_5    Constructor Function
+    function Student(roll, name, course, branch) {
+        this.roll = roll;
+        this.name = name;
+        this.course = course;
+        this.branch = branch;
+    }
+    let std1 = new Student(101, 'Bharath', 'Java', 'PA');
+    let std2 = new Student(102, 'Sandeepa', '.net', 'TN');
+    console.log(std1, std2);
+
+    // ES_6
+    class Stud {
+        constructor(roll, name, course, branch) {
+            this.roll = roll;
+            this.name = name;
+            this.course = course;
+            this.branch = branch;
+        }
+    }
+    let std3 = new Stud(103, 'Vishnu', 'Angular', 'PA');
+    let std4 = new Stud(104, 'Vyshnavi', '.net', 'TN');
+    console.log(std3, std4);
+</script>

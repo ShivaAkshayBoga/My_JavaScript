@@ -1,0 +1,33 @@
+<script>
+    let account = { accNo: 12345, accBal: 5000 }; // Encapsulated Object - No
+    console.log(account.accNo, account.accBal); // Read - yes
+    account.accBal = -50000;
+    console.log(account.accNo, account.accBal); // write - yes
+
+    function openAccount(initialAmt) {
+        let accNo = 112233; // generate
+        let accBal = initialAmt; // not exposing the data
+
+        return { // exposing member functions
+            deposit: function (amt) {
+                if (amt < 0) {
+                    console.log('Sorry Boss! I dont want your Money, Please keep it with you!!')
+                } else {
+                    accBal = accBal + amt;
+                }
+            },
+            displayInfo: function () {
+                console.log(`${accNo} has Rs.${accBal} in his/her account`)
+            }
+        }
+    }
+    let encapsulatedAccount = openAccount(3000);
+    console.log(encapsulatedAccount);
+
+    encapsulatedAccount.displayInfo();
+    encapsulatedAccount.deposit(-4000);
+    encapsulatedAccount.deposit(4000);
+    encapsulatedAccount.displayInfo();
+
+    console.dir(encapsulatedAccount.deposit)
+</script>

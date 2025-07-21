@@ -1,0 +1,33 @@
+<script>
+    class Student {
+        constructor(roll, name, course) {
+            this.roll = roll;
+            this.name = name;
+            this.course = course;
+            // this.clgName = 'Eureka';  // 1000 * 4 = 4000
+        }
+    }
+    Student.prototype.clgName = 'Eureka';
+
+    let std1 = new Student(101, 'Vishnu', 'Angular');
+    console.log(std1.name, std1.course, std1.clgName);
+
+    let std2 = new Student(102, 'Bharath', 'Angular');
+    console.log(std2.name, std2.course, std2.clgName);
+
+    console.log(std1)
+    console.log(std2)
+
+    std1.clgName = 'Eureka Infotech';          // direct prop , prototype prop
+    console.log(std1.name, std1.course, std1.clgName);
+    console.log(std2.name, std2.course, std2.clgName);
+
+    console.log('name' in std1); // true
+    console.log(std1.hasOwnProperty('name')); // true
+
+    console.log('clgName' in std2); // true
+    console.log(std2.hasOwnProperty('clgName')); // false
+
+    console.log('dob' in std2); // false
+    console.log(std2.hasOwnProperty('dob')); // false
+</script>

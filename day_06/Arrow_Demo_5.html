@@ -13,10 +13,10 @@
         }
     }
     let userObj = new User();
-    // userObj.fullName1(); // Virat Kohli
-    // userObj.fullName2(); // Virat Kohli
+     userObj.fullName1(); // Virat Kohli
+     userObj.fullName2(); // Virat Kohli
 
     setTimeout(userObj.fullName1, 2000); // setTimeout-higherOrder , fullName1-callback
-    // setTimeout(userObj.fullName1.bind(userObj), 4000); // setTimeout-higherOrder , fullName1-callback
+    setTimeout(userObj.fullName1.bind(userObj), 4000); // setTimeout-higherOrder , fullName1-callback
     setTimeout(userObj.fullName2, 6000); // 
 </script>

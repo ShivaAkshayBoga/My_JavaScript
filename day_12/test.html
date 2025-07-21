@@ -1,0 +1,64 @@
+<script>
+    class student{
+        constructor(name,age){
+            this.name=name;
+            this.age=age;
+        }
+    }
+    let st=new student("shiva",25);
+    student.prototype.rollNo='12345';
+    console.log(st.name+st.rollNo);
+    console.log('rollNo' in st);
+    st.rollNo='8989';
+    console.log(st.hasOwnProperty('rollNo'));
+
+    let obj1 ={ a:10, b:20};
+    let obj2={c:20, b:30};
+    let obj3=Object.assign({},obj1,obj2);
+    console.log(JSON.stringify(obj3));
+
+    let obj4=Object.create(obj1);
+    console.log(obj4.a);
+
+    let employees = [
+        { "eId": 101, "name": "sanjay", "sal": 5000, "gender": "male" },
+        { "eId": 104, "name": "geeta", "sal": 8000, "gender": "female" },
+        { "eId": 103, "name": "sameer", "sal": 7000, "gender": "male" },
+        { "eId": 102, "name": "sita", "sal": 9000, "gender": "female" },
+        { "eId": 105, "name": "deepak", "sal": 8000, "gender": "male" }
+    ]
+    let grouped_employees = Object.groupBy(employees, (emp) => emp.gender);
+    console.log(grouped_employees)
+
+     //let user = { name: 'sachin', age: 35, add: 'mumbai' };
+
+    // let all_keys = Object.keys(user)
+    // console.log(all_keys); // [name,age,add]
+
+    // let all_values = Object.values(user)
+    // console.log(all_values); // ['sachin', 35, 'mumbai']
+
+    // let all_entries = Object.entries(user)
+    // console.log(all_entries); // [['name', 'sachin'], ['age', 35], ['add', 'mumbai']]
+
+    // let userObj = Object.fromEntries(all_entries);
+    // console.log(userObj)
+
+    let user = { name: 'sachin', 'last name': 'tendulkar', age: 35, add: 'mumbai' };
+
+    console.log(user.name);
+    console.log(user['add']);
+
+
+    console.log(user['last name']);
+    // console.log(user.last name);
+
+    let x = 'add';
+    console.log(user.x); // undefined
+    console.log(user[x]); // mumbai
+
+    for (key in user) {
+        console.log(key + '-----' + user[key]);
+    }
+
+</script>

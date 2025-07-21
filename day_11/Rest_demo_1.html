@@ -1,0 +1,23 @@
+<script>
+    function add2Nums(a, b) {
+        console.log(`addition of a&b is ${a + b}`);
+    }
+    add2Nums(10, 20);
+
+    function add3Nums(a, b, c) {
+        console.log(`addition of a&b&c is ${a + b + c}`);
+    }
+    add3Nums(10, 20, 30);
+
+
+    function sum(...arr) { // rest parameter
+        let res = 0;
+        for (ele of arr) {
+            res = res + ele;
+        }
+        console.log(res)
+    }
+    sum(10, 20);
+    sum(10, 20, 30);
+    sum(10, 20, 30, 40);
+</script>

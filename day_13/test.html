@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="id" onclick="f1()">Increase</button>
+    <h1>Count: <span>0</span></h1>
+    <script>
+        function increment(){
+            let count=0;
+            return function cnt(){
+                count++;
+                document.querySelector("span").innerHTML=count;
+            }
+        }
+        let f1=increment();
+    </script>
+</body>
+</html>
